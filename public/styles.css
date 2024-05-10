@@ -1,0 +1,129 @@
+body {
+  background-color: #68269e;
+  background-image: url("https://www.transparenttextures.com/patterns/xv.png");
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+}
+#root {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+svg {
+  padding: 2px !important;
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.56);
+  height: 120px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+header h2 {
+  flex: 2;
+}
+header * {
+  margin: 0;
+  padding: 10px;
+}
+
+footer {
+  background-color: rgba(255, 255, 255, 0.56);
+  height: 120px;
+  margin-top: auto;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: space-around;
+}
+footer a {
+  box-shadow: none !important;
+}
+footer a:hover {
+  background-color: transparent !important;
+}
+footer .copyright {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.hero {
+  background-color: rgba(255, 255, 255, 0.123);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero > h1 {
+  margin: 4px;
+  padding: 10px;
+  font-size: 60px;
+  font-weight: 900;
+  text-transform: capitalize;
+}
+.hero > .logo {
+  width: 560px;
+  height: 250px;
+  margin: 6px;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+.hero > p {
+  width: 70%;
+  margin: 0;
+  padding: 6px;
+  line-height: 14px;
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: capitalize;
+}
+.hero > p > span {
+  color: #830000;
+  margin: 4px;
+  padding: 6px;
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.hero > p:nth-child(2) {
+  font-size: 22px;
+  text-transform: uppercase;
+}
+.hero > .smallText {
+  margin: 1% 0%;
+  font-size: 16px;
+}
+
+.pageBody {
+  background-color: rgba(255, 255, 255, 0.56);
+  padding: 1%;
+  text-align: start;
+  font-size: 20px;
+  display: grid;
+  gap: 2%;
+  grid-template-columns: 14% 68% 14%;
+}
+.pageBody > .mainArea > .links {
+  margin: 10px;
+  padding: 20px;
+}
+.pageBody > .mainArea > .links {
+  width: auto;
+  margin: 1%;
+  padding: 1%;
+  border: 2px solid black;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 5%;
+}
+.pageBody > .mainArea > .informativeList > ul > li {
+  margin: 1%;
+  padding: 2%;
+  text-transform: capitalize;
+  font-weight: 600;
+  text-shadow: 1px 1px rgb(164, 79, 216);
+}
