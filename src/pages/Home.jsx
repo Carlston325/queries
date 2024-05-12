@@ -38,9 +38,9 @@ function Home() {
         informativeTwo="is there something you don't understand, don't worry just make an info request, we'll research and answer back with the best explanation."
         // LINK BOX 1
         linkBox1={true} //set to "true" if entering values below
-        linkOne="/productRequests"
+        linkOne="/prdctRequest"
         linkNameOne="Make a PRODUCT query"
-        linkTwo="/infoRequests"
+        linkTwo="/infoRequest"
         linkNameTwo="Make a INFO query"
         // iINFO BOX 2
         infoBox2={false} //set to "true" if entering values below
