@@ -1,8 +1,30 @@
 import Hero from "../components/Hero";
 import BTN from "../components/BTN";
 import LinkBox from "../components/LinkBox";
+import { useState } from "react";
 
 function ProductRequests() {
+  const [prdct, setPrdct] = useState({
+    username: "",
+    email: "",
+    prdctName: "",
+    description: "",
+  });
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setPrdct((preValue) => {
+      return { ...preValue, [name]: value };
+    });
+  }
+
+  const [submitPrdct, setSubmitPrdct] = useState([]);
+  function handleSubmit() {
+    setPrdct({ username: "", email: "", prdctName: "", description: "" });
+    setSubmitPrdct((preValue) => {
+      return [...preValue, prdct];
+    });
+  }
+
   return (
     <>
       <Hero
@@ -10,12 +32,22 @@ function ProductRequests() {
         lineOne={<p>make your Queries here</p>}
       />
       <div className="formDiv">
-        <form action="/productSubmit" method="post">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSubmit();
+          }}
+        >
           {/* name input */}
-
           <div>
             <label htmlFor="name">Enter name:</label>
-            <input type="text" name="name" id="namePrdctRqst" />
+            <input
+              type="text"
+              name="username"
+              value={prdct.username}
+              onChange={handleChange}
+              id="namePrdctRqst"
+            />
           </div>
 
           {/* enter email */}
@@ -26,10 +58,16 @@ function ProductRequests() {
 
           {/* product name */}
           <div>
-            <label htmlFor="productName">
+            <label htmlFor="prdctName">
               What is the Name of the <span>product</span>?
             </label>
-            <input type="text" name="productName" />
+            <input
+              type="text"
+              name="prdctName"
+              value={prdct.prdctName}
+              onChange={handleChange}
+              id="prdctTypeRqst"
+            />
           </div>
 
           {/* description */}
@@ -39,7 +77,9 @@ function ProductRequests() {
             </label>
             <textarea
               name="description"
-              id="descriptionPrdctRqst"
+              value={prdct.description}
+              onChange={handleChange}
+              id="prdctDescriptionRqst"
               contentEditable
               spellCheck
             ></textarea>
