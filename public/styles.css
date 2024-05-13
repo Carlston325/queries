@@ -10,7 +10,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-
 svg {
   padding: 2px !important;
 }
@@ -126,7 +125,24 @@ footer .copyright {
   padding: 2%;
   text-transform: capitalize;
   font-weight: 600;
-  text-shadow: 1px 1px rgb(164, 79, 216);
+  text-shadow: 1px 1px rgba(167, 167, 167, 0.521);
+}
+
+.slctFrm {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  gap: 2%;
+  font-size: 20px;
+}
+.slctFrm > p {
+  width: 155px;
+  margin: auto;
+  padding: 4px;
+  font-weight: 900;
+}
+.slctFrm > span {
+  margin: 4px;
 }
 
 .formDiv {
@@ -134,7 +150,6 @@ footer .copyright {
   margin: 10px auto;
   padding: 10px;
 }
-
 .formDiv > form {
   background-color: #f3e3ff;
   width: 100%;
@@ -147,7 +162,6 @@ footer .copyright {
   font-size: 28px;
   font-weight: 900;
 }
-
 .formDiv > form > div {
   margin: 10px;
   padding: 6px;
@@ -170,7 +184,6 @@ footer .copyright {
   grid-area: 4/1/5/3;
   align-items: center;
 }
-
 .formDiv > form > div > input {
   width: 80%;
   height: 30px;
@@ -184,7 +197,6 @@ footer .copyright {
 .formDiv > form > div > button {
   font-size: 24px;
 }
-
 .formDiv > form > div > label > span {
   color: #830000;
   font-size: 30px;

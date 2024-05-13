@@ -91,10 +91,6 @@ function ProductRequests() {
           </div>
         </form>
       </div>
-      <div className="links">
-        <LinkBox link="/infoRequest" linkName="Go to Info Request" />
-        <LinkBox link="/" linkName="Go Home" />
-      </div>
     </>
   );
 }

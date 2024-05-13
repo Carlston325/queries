@@ -1,7 +1,26 @@
+import Switch from "@mui/material/Switch";
+import { useState } from "react";
+
 import Hero from "../components/Hero";
 import Body from "../components/Body";
+import ProductRequests from "./ProductRequests";
+import InfoRequests from "./InfoRequests";
+import { click } from "@testing-library/user-event/dist/click";
 
 function Home() {
+  const styleBTN = {
+    color: "rgb(39, 158, 255)",
+  };
+
+  const [clicked, setClicked] = useState(false);
+  function handleChange() {
+    if (clicked) {
+      setClicked(false);
+    } else {
+      setClicked(true);
+    }
+  }
+
   return (
     <>
       <Hero
@@ -36,23 +55,18 @@ function Home() {
         infoBox1={true} //set to "true" if entering values below
         informativeOne="do you want to buy something, but there are too many options. don't worry, just make product request and answer a few questions"
         informativeTwo="is there something you don't understand, don't worry just make an info request, we'll research and answer back with the best explanation."
-        // LINK BOX 1
-        linkBox1={true} //set to "true" if entering values below
-        linkOne="/prdctRequest"
-        linkNameOne="Make a PRODUCT query"
-        linkTwo="/infoRequest"
-        linkNameTwo="Make a INFO query"
-        // iINFO BOX 2
-        infoBox2={false} //set to "true" if entering values below
-        informativeThree=""
-        informativeFour=""
-        // LINK BOX 2
-        linkBox2={false} //set to "true" if entering values below
-        linkThree=""
-        linkNameThree=""
-        linkFour=""
-        linkNameFour=""
       />
+      <div className="slctFrm">
+        <p>Request Form</p>
+        {clicked ? (
+          <Switch style={styleBTN} checked={clicked} onChange={handleChange} />
+        ) : (
+          <Switch checked={clicked} onChange={handleChange} />
+        )}
+        {/* <p>{clicked ? "true" : "false"}</p> */}
+        <p>Info Form</p>
+      </div>
+      {clicked ? <InfoRequests /> : <ProductRequests />}
     </>
   );
 }

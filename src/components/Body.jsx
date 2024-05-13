@@ -60,3 +60,30 @@ function Body(props) {
   );
 }
 export default Body;
+
+// HOW TO USE:
+//<Body
+// iINFO BOX 1
+////   infoBox1={true} //set to "true" if entering values below
+////   informativeOne=""
+////   informativeTwo=""
+
+// LINK BOX 1
+////   linkBox1={false} //set to "true" if entering values below
+////   linkOne=""
+////   linkNameOne=""
+////   linkTwo=""
+////   linkNameTwo=""
+
+// iINFO BOX 2
+////   infoBox2={false} //set to "true" if entering values below
+////   informativeThree=""
+////   informativeFour=""
+
+// LINK BOX 2
+////   linkBox2={false} //set to "true" if entering values below
+////   linkThree=""
+////   linkNameThree=""
+////   linkFour=""
+////   linkNameFour=""
+//// />
