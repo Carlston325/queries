@@ -1,8 +1,5 @@
-import Hero from "../components/Hero";
-import BTN from "../components/BTN";
-import LinkBox from "../components/LinkBox";
+import BTN from "./BTN";
 import { useState } from "react";
-import { logDOM } from "@testing-library/react";
 
 function InfoRequests() {
   const [info, setInfo] = useState({
@@ -10,6 +7,7 @@ function InfoRequests() {
     email: "",
     infoName: "",
     description: "",
+    formType: "Info Request",
   });
   function handleChange(e) {
     const { name, value } = e.target;
@@ -27,11 +25,9 @@ function InfoRequests() {
   }
 
   return (
-    <>
-      <Hero
-        title={<h1>Info Queries</h1>}
-        lineOne={<p>make your Queries here</p>}
-      />
+    <div className="frm">
+      <h2>Info Queries</h2>
+      <p>make your Queries here</p>
       <div className="formDiv">
         {/* <div>{info.name}</div> */}
         <form
@@ -42,7 +38,7 @@ function InfoRequests() {
         >
           {/* name input */}
           <div>
-            <label htmlFor="username">Enter name:</label>
+            <label htmlFor="username">Enter name</label>
             <input
               type="text"
               name="username"
@@ -54,7 +50,7 @@ function InfoRequests() {
 
           {/* enter email */}
           <div>
-            <label htmlFor="email">Enter email:</label>
+            <label htmlFor="email">Enter email</label>
             <input
               onChange={handleChange}
               type="email"
@@ -95,7 +91,7 @@ function InfoRequests() {
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 

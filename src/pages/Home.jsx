@@ -3,13 +3,14 @@ import { useState } from "react";
 
 import Hero from "../components/Hero";
 import Body from "../components/Body";
-import ProductRequests from "./ProductRequests";
-import InfoRequests from "./InfoRequests";
-import { click } from "@testing-library/user-event/dist/click";
+import ProductRequests from "../components/ProductRequests";
+import InfoRequests from "../components/InfoRequests";
 
 function Home() {
   const styleBTN = {
     color: "rgb(39, 158, 255)",
+    transform: "translateX(30px)",
+    top: "2px",
   };
 
   const [clicked, setClicked] = useState(false);
@@ -56,15 +57,21 @@ function Home() {
         informativeOne="do you want to buy something, but there are too many options. don't worry, just make product request and answer a few questions"
         informativeTwo="is there something you don't understand, don't worry just make an info request, we'll research and answer back with the best explanation."
       />
-      <div className="slctFrm">
-        <p>Request Form</p>
-        {clicked ? (
-          <Switch style={styleBTN} checked={clicked} onChange={handleChange} />
-        ) : (
-          <Switch checked={clicked} onChange={handleChange} />
-        )}
-        {/* <p>{clicked ? "true" : "false"}</p> */}
-        <p>Info Form</p>
+      <div>
+        <div className="slctFrm">
+          <p>Product Form</p>
+          {clicked ? (
+            <Switch
+              style={styleBTN}
+              checked={clicked}
+              onChange={handleChange}
+            />
+          ) : (
+            <Switch checked={clicked} onChange={handleChange} />
+          )}
+          {/* <p>{clicked ? "true" : "false"}</p> */}
+          <p>Info Form</p>
+        </div>
       </div>
       {clicked ? <InfoRequests /> : <ProductRequests />}
     </>

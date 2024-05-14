@@ -1,6 +1,4 @@
-import Hero from "../components/Hero";
-import BTN from "../components/BTN";
-import LinkBox from "../components/LinkBox";
+import BTN from "./BTN";
 import { useState } from "react";
 
 function ProductRequests() {
@@ -9,6 +7,7 @@ function ProductRequests() {
     email: "",
     prdctName: "",
     description: "",
+    formType: "Product Request",
   });
   function handleChange(e) {
     const { name, value } = e.target;
@@ -26,11 +25,9 @@ function ProductRequests() {
   }
 
   return (
-    <>
-      <Hero
-        title={<h1>Product Queries</h1>}
-        lineOne={<p>make your Queries here</p>}
-      />
+    <div className="frm">
+      <h2>Product Queries</h2>
+      <p>make your Queries here</p>
       <div className="formDiv">
         <form
           onSubmit={(e) => {
@@ -40,7 +37,7 @@ function ProductRequests() {
         >
           {/* name input */}
           <div>
-            <label htmlFor="name">Enter name:</label>
+            <label htmlFor="name">Enter name</label>
             <input
               type="text"
               name="username"
@@ -52,7 +49,7 @@ function ProductRequests() {
 
           {/* enter email */}
           <div>
-            <label htmlFor="email">Enter email:</label>
+            <label htmlFor="email">Enter email</label>
             <input type="email" name="email" id="emailPrdctRqst" />
           </div>
 
@@ -91,7 +88,7 @@ function ProductRequests() {
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 
